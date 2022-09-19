@@ -1,0 +1,21 @@
+{
+  "name": "app-gamechosecard",
+  "version": "1.0.0",
+  "description": "game-card",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "game",
+    "chose",
+    "card"
+  ],
+  "author": "Albert Pivnenko <pivnenko.albert@gamil.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}

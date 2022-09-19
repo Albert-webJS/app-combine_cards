@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/icons.css" />
+    <link rel="stylesheet" href="./src/style/normalize.css" />
+    <link rel="stylesheet" href="/src/style/main.css" />
+    <title>Game Card</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="header__container-from-icons">
+          <div class="header__box-icon box-icon box-icon--describ">
+            <i class="fa-sharp fa-solid fa-code"></i>
+          </div>
+          <div class="header__box-icon box-icon box-icon--message">
+            <a
+              class="header__telegram-link"
+              href="https://t.me/AlikPivnenko"
+              target="_blank"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="switch-btn">
+          <i class="fa-solid fa-sun position-left"></i>
+          <i class="fa-solid fa-moon position-right"></i>
+        </div>
+      </header>
+      <main class="game-area">
+        <div class="game-area__box"></div>
+      </main>
+      <footer class="footer">
+        <div class="footer__box-icon box-icon">
+          <a class="footer__link" href="mailto:pivnenko.albert@gmail.com">
+            <i class="fa-sharp fa-solid fa-envelope"></i>
+          </a>
+        </div>
+        <div class="footer__author-info">
+          @Albert Pivnenko
+          <span class="footer-show-year"></span>
+        </div>
+      </footer>
+      <div class="popup">
+        <div class="popup__body">
+          <span class="popup__close"></span>
+          <div class="popup__box-content">
+            <h2 class="popup__title">Describe ..</h2>
+            <div class="popup__job-description">
+              Hi, glad you stopped by this page and gave it a try. Here I used a
+              simpler technology stack, TypeScript, native CSS and HTM.
+              Developing this game turned out to be fun. I honed my skills in
+              applying styles to the page and improved my understanding of
+              TypeScript. I also got better at manipulating DOM elements. Thank
+              you for your attention. Have a great day.
+            </div>
+            <button class="popup__button btn">continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/js/index.js"></script>
+  </body>
+</html>
