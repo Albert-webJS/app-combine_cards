@@ -238,6 +238,7 @@ body {
 }
 
 .game-area {
+  position: relative;
   width: 100%;
   background: var(--background-content);
   display: flex;
@@ -253,6 +254,13 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.game-area__box--display-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
 }
 
 .game-area__title {
@@ -302,6 +310,55 @@ body {
 
 .area__card.flip.successfully {
   background-color: var(--color-card__success);
+}
+
+.display-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  max-width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  border-radius: 0 0px 10px 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: showDispaly 0.3s ease forwards;
+}
+
+.display__trying,
+.display__successing {
+  display: inline-block;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.display__trying {
+  background-color: rgba(94, 187, 232, 0.4);
+}
+
+.display__successing {
+  background-color: #7ae85e54;
+}
+
+
+@keyframes showDispaly {
+  0% {
+    transform: translateY(-100px);
+    z-index: -10;
+  }
+  50% {
+    transform: translateY(-50px);
+    z-index: -10;
+  }
+  100% {
+    transform: translateY(10px);
+    z-index: 1;
+  }
 }
 
 .footer {

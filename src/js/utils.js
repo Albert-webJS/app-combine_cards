@@ -1,5 +1,5 @@
 "use strict";
-// Object.defineProperty(exports, "__esModule", { value: true });
+
 export function shuffle(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
@@ -42,4 +42,12 @@ export function showYear(selector) {
     const display = document.querySelector(selector);
     let year = setYear();
     display ? display.textContent = `${year}` : null;
+}
+
+export function createElement(tag, className, additionalClass) {
+    const domElement = document.createElement(tag);
+    if (className) {
+        domElement.classList.add(className, (additionalClass ? additionalClass : null));
+    }
+    return domElement;
 }

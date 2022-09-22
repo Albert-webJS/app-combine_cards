@@ -1,6 +1,7 @@
-export const CreateGameCard = (defaultIcon: string, flippedCardIcon: string): HTMLDivElement => {
-    const card: HTMLDivElement = document.createElement("div");
-    card.classList.add("area__card");
+import { createElement } from "./utils.js";
+
+export const CreateGameCard = (defaultIcon: string, flippedCardIcon: string): HTMLElement => {
+    const card = createElement("div", "area__card", null);
 
     const backFlippedCard: HTMLElement = document.createElement('i');
     const frontFlippedCard: HTMLElement = document.createElement('i');

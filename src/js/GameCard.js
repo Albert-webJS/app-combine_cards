@@ -1,8 +1,9 @@
 "use strict";
-// Object.defineProperty(exports, "__esModule", { value: true });
+import { createElement } from "./utils.js";
+
 export function CreateGameCard(defaultIcon, flippedCardIcon) {
-    const card = document.createElement("div");
-    card.classList.add("area__card");
+    const card = createElement("div", "area__card", null);
+    
     const backFlippedCard = document.createElement('i');
     const frontFlippedCard = document.createElement('i');
     backFlippedCard.classList.add('fa', `fa-${defaultIcon}`);

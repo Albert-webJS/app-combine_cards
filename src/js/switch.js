@@ -1,5 +1,5 @@
 "use strict";
-// Object.defineProperty(exports, "__esModule", { value: true });
+
 const switchBtn = document.querySelector(".switch-btn");
 const cursorToggleLefr = document.querySelector(".position-left");
 const cursorToggleRight = document.querySelector(".position-right");

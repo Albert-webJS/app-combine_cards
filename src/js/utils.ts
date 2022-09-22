@@ -49,3 +49,14 @@ export const showYear = (selector: string) => {
 
     display ? display.textContent = `${year}` : null;
 };
+
+
+export const createElement = (tag: string, className: string, additionalClass: string | null): HTMLButtonElement | HTMLElement => {
+    const domElement: HTMLElement | HTMLButtonElement = document.createElement(tag);
+
+    if (className) {
+        domElement.classList.add(className, (additionalClass ? additionalClass : ""))
+    }
+
+    return domElement
+}

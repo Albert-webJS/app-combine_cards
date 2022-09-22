@@ -1,6 +1,6 @@
 import { CreateGameMenu } from "./GameMenu.js";
 import { CreateGameCard } from "./GameCard.js";
-import { shuffle, dublicateCard, createIconsArray } from "./utils.js";
+import { shuffle, dublicateCard, createIconsArray, createElement } from "./utils.js";
 
 type Cards = number | null
 
@@ -9,17 +9,16 @@ export const Start = (difficult: number) => {
   let secondCard: Cards = null;
   let clicked: boolean = true;
 
+  const areaForCard: HTMLElement = createElement('div', "game-area__card", null);
+  const restartButton = createElement('button', "restart-btn", "btn");
 
+  restartButton.textContent = "Restart"
+  
   const gameArea: HTMLDivElement | null = document.querySelector('.game-area__box');
-  const areaForCard: HTMLDivElement = document.createElement('div');
   const cardsIcons: string[] | undefined = createIconsArray(difficult);
   const duplicatedCardsIcons: string[] = dublicateCard(cardsIcons ?? []);
-  const restartButton: HTMLButtonElement = document.createElement('button');
 
   gameArea ? gameArea.innerHTML = "" : null;
-  restartButton.textContent = "Restart"
-  areaForCard.classList.add("game-area__card");
-  restartButton.classList.add("restart-btn", "btn");
 
   shuffle(duplicatedCardsIcons);
 

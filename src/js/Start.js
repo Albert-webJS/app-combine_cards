@@ -1,28 +1,50 @@
 "use strict";
-// Object.defineProperty(exports, "__esModule", { value: true });
 import { CreateGameMenu } from "./GameMenu.js";
 import { CreateGameCard } from "./GameCard.js";
-import { createIconsArray, dublicateCard, shuffle } from "./utils.js";
+import {
+  createElement,
+  createIconsArray,
+  dublicateCard,
+  shuffle,
+} from "./utils.js";
+
 export function Start(difficult) {
   let firstCard = null;
   let secondCard = null;
   let clicked = true;
+
+  const areaForCard = createElement("div", "game-area__card", null);
+
+  const restartButton = createElement("button", "restart-btn", "btn");
+  restartButton.textContent = "Restart";
+
+  const displayInfoGame = createElement("div", "display-info", null);
+  const trying = createElement("span", "display__trying");
+  const successing = createElement("span", "display__successing");
+
+  trying.textContent = `trying: 0`;
+  successing.textContent = "successing: 0";
+
+  displayInfoGame.append(trying, successing, restartButton);
+  const wrapperPage = document.querySelector(".page-wrapper");
+  wrapperPage.append(displayInfoGame);
+
   const gameArea = document.querySelector(".game-area__box");
-  const areaForCard = document.createElement("div");
   const cardsIcons = createIconsArray(difficult);
   const duplicatedCardsIcons = dublicateCard(cardsIcons);
-  const restartButton = document.createElement("button");
+
   gameArea ? (gameArea.innerHTML = "") : null;
-  restartButton.textContent = "Restart";
-  areaForCard.classList.add("game-area__card");
-  restartButton.classList.add("restart-btn", "btn");
+
   shuffle(duplicatedCardsIcons);
   duplicatedCardsIcons.forEach((icon) =>
     areaForCard.append(CreateGameCard("question-circle", icon))
   );
-  gameArea ? gameArea.append(areaForCard, restartButton) : null;
+
+  gameArea ? gameArea.append(areaForCard) : null; // restartButton add this element here
   const cards = document.querySelectorAll(".area__card");
+
   restartButton.addEventListener("click", CreateGameMenu);
+
   cards.forEach((card, index) =>
     card.addEventListener("click", () => {
       if (clicked === true && !card.classList.contains("successfully")) {

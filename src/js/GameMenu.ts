@@ -1,18 +1,17 @@
 import { Start } from "./Start";
+import { createElement } from './utils.js'
 
 export const CreateGameMenu = (): void => {
-    const title: HTMLElement = document.createElement("h2");
-    const gameArea: HTMLDivElement | null = document.querySelector(".game-area__box");
+    const title: HTMLElement = createElement("h2", "game-area__title", null);
+    const gameArea: HTMLDivElement | null = document.querySelector(".game-area__box--display-menu");
 
-    title.classList.add("game-area__title")
     title.textContent = "combine the cards";
 
     gameArea ? gameArea.innerHTML = "" : null;
 
-    const difficultButton = (difficult: number): HTMLButtonElement => {
-        const button: HTMLButtonElement = document.createElement("button");
+    const difficultButton = (difficult: number): HTMLButtonElement | HTMLElement => {
+        const button = createElement("button", "game-area__difficult-btn", "btn")
 
-        button.classList.add("game-area__difficult-btn", "btn");
         button.textContent = `${difficult} card`
 
         button.addEventListener('click', () => Start(difficult))
